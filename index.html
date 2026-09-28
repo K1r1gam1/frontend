@@ -3,18 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frontend v1.0</title>
+    <title>Frontend v2.0</title>
     <style>
-        body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f0f2f5; margin: 0; }
-        .container { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 300px; }
+        body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #f0f2f5; margin: 0; padding: 20px; }
+        .container { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 340px; }
         h1 { font-size: 1.2rem; text-align: center; }
         .form-group { margin-bottom: 1rem; }
         input { width: 100%; padding: 0.5rem; box-sizing: border-box; }
         button { width: 100%; padding: 0.5rem; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
         button:hover { background-color: #0056b3; }
+        button.secondary { background-color: #6c757d; }
+        button.secondary:hover { background-color: #545b62; }
         .status { margin-top: 1rem; font-size: 0.9rem; text-align: center; }
         .success { color: green; }
         .error { color: red; }
+        .divider { margin: 1.5rem 0; border: 0; border-top: 1px solid #eee; }
+        textarea { width: 100%; box-sizing: border-box; padding: 0.5rem; font-family: inherit; }
+        h3 { font-size: 1rem; margin-top: 1rem; }
     </style>
 </head>
 <body>
@@ -25,6 +30,18 @@
         </div>
         <button id="sendButton">Отправить</button>
         <div id="statusMessage" class="status"></div>
+
+        <hr class="divider">
+
+        <h1>Просмотр пользователей по дате</h1>
+        <div class="form-group">
+            <input type="date" id="dateInput">
+        </div>
+        <button id="showButton" class="secondary">Показать</button>
+        <div class="output-group">
+            <h3 id="resultTitle" style="display:none;"></h3>
+            <textarea id="usersOutput" rows="6" readonly placeholder="Здесь появятся имена..."></textarea>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
